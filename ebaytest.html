@@ -23,7 +23,7 @@
                 "SERVICE-VERSION": "1.0.0",
                 "GLOBAL-ID": "EBAY-US",
                 "SECURITY-APPNAME": "BenPinal-Thinkful-PRD-d9f08f400-7cd9a0a1",
-                "RESPONSE-DATA-FORMAT": "JSON",
+                "RESPONSE-DATA-FORMAT": "JSONP",
                 "callback": "foo"
             };
             var result = $.ajax({
@@ -31,7 +31,7 @@
                     /* update API end point */
                     "url": "https://crossorigin.me/http://svcs.ebay.com/services/search/FindingService/v1",
                     "data": params,
-                    "dataType": "json",
+                    "dataType": "jsonp",
                     "crossDomain": true,
                     "crossOrigin": true,
                     /*set the call type GET / POST*/
