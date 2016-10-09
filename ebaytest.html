@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Api test</title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="https://crossorigin.me/http://code.jquery.com/jquery.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -29,7 +29,7 @@
             var result = $.ajax({
               "headers": {"Access-Control-Allow-Origin": "*"},
                     /* update API end point */
-                    "url": "http://svcs.ebay.com/services/search/FindingService/v1",
+                    "url": "https://crossorigin.me/http://svcs.ebay.com/services/search/FindingService/v1",
                     "data": params,
                     "dataType": "json",
                     "crossDomain": true,
