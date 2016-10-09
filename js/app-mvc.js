@@ -9,7 +9,7 @@ bestBuy.Model = function() {
 }
 
 bestBuy.Model.prototype.getResults = function(query) {
-  var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
+  var url = 'https://crossorigin.me/https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
   $.ajax({
     method: 'GET',
     url: url,
@@ -65,7 +65,6 @@ bestBuy.View.prototype.getUserQuery = function() {
 bestBuy.View.prototype.resultsIntoListItem = function(result) {
   var output = '';
   if (!result.error && result.products) {
-    //console.log(result.products);
     output = result.products.reduce(this.reduceItemResult, '');
   } else {
     output = 'Unable to access products (see browser console for more information)';
@@ -84,7 +83,6 @@ bestBuy.View.prototype.reduceItemResult = function(output, product) {
   var template = Handlebars.compile(source);
   product.isSale = (product.salePrice < product.regularPrice) && (product.salePrice);
   output += template(product);
-  console.log(output);
   return output;
 }
 
