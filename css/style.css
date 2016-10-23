@@ -94,14 +94,14 @@
         font-weight: 600;
     }
 
-    .results {
+    .best-buy-results, .walmart-results {
         margin-left: auto;
         margin-right: auto;
         width: 87%;
         margin-top: 3rem;
     }
 
-    .results li {
+    .best-buy-results li, .walmart-results li {
         width: 33.3%;
         vertical-align: top;
         padding: 1rem 0.5rem 1rem 0.5rem;
@@ -120,7 +120,7 @@
         box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
     }
 
-    .results img {
+    .best-buy-results img, .walmart-results img {
         display: block;
         max-width: 90%;
         height: 6rem;
@@ -129,14 +129,14 @@
         margin: 1.25rem auto 1rem auto;
     }
 
-    .results .title-wrapper {
+    .best-buy-results .title-wrapper, .walmart-results .title-wrapper {
         height: 5rem;
         display: table;
         width: 100%;
         /* forms as a table cell */
     }
 
-    .results h3 {
+    .best-buy-results h3, .walmart-results h3 {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
@@ -192,10 +192,10 @@
     /* Responsive Styles */
 
     @media only screen and (max-width: 1024px) {
-        .results {
+        .best-buy-results, .walmart-results {
             width: 90%;
         }
-        .results li {
+        .best-buy-results li, .walmart-results li {
             width: 50%;
         }
     }
@@ -210,10 +210,10 @@
         #search-box {
             width: 50%;
         }
-        .results {
+        .best-buy-results, .walmart-results {
             width: 90%;
         }
-        .results li {
+        .best-buy-results li, .walmart-results li {
             width: 100%;
             padding: 1rem;
         }
@@ -227,7 +227,7 @@
             padding: 0.6rem 0.8rem 0.6rem 0.8rem;
             margin-left: 0.3rem;
         }
-        .results {
+        .best-buy-results, .walmart-results {
             width: 95%;
         }
     }
