@@ -21,22 +21,29 @@
         </span>
 
   </header>
-  <section class="results">
+  <section class="best-buy-results">
+    <h1>Best Buy Results</h1>
     <ul>
 
     </ul>
   </section>
-  <script id="product-list-item" type="text/x-handlebars-template">
+  <section class="walmart-results">
+    <h1>Walmart Results</h1>
+    <ul>
+
+    </ul>
+  </section>
+  <script id="best-buy-product-list-item" type="text/x-handlebars-template">
     <li >
       <div class="product-container">
         <div class="title-wrapper">
           <h3 class="clamp-this">{{name}}</h3></div>
-        <img src="https://crossorigin.me/{{image}}">
+        <img src="{{image}}">
         <div class="product-details">
           {{#if customerReviewCount}}
           <p class="review-num">{{customerReviewCount}} Reviews</p>
           {{/if}} {{#if customerReviewAverage}}
-          <p class="star-avg">{{customerReviewAverage}}Stars</p>
+          <p class="star-avg">{{customerReviewAverage}} Stars</p>
           {{/if}} {{#if isSale}}
           <p class="reg-price strikethrough">${{regularPrice}}</p>
           <p class="sale-price highlight">Sale: ${{salePrice}}</p>
@@ -45,8 +52,28 @@
           {{/if}}
         </div>
         {{#if isSale}}
-        <a href="https://crossorigin.me/{{addToCartUrl}}" class="add-to-cart sale-button">Add to Cart</a> {{else}}
-        <a href="https://crossorigin.me/{{addToCartUrl}}" class="add-to-cart">Add to Cart</a> {{/if}}
+        <a href="{{addToCartUrl}}" class="add-to-cart sale-button">Add to Cart</a> {{else}}
+        <a href="{{addToCartUrl}}" class="add-to-cart">Add to Cart</a> {{/if}}
+      </div>
+    </li>
+  </script>
+  <script id="walmart-product-list-item" type="text/x-handlebars-template">
+    <li >
+      <div class="product-container">
+        <div class="title-wrapper">
+          <h3 class="clamp-this">{{name}}</h3></div>
+        <img src="{{largeImage}}">
+        <div class="product-details">
+          {{#if numReviews}}
+          <p class="review-num">{{numReviews}} Reviews</p>
+          {{/if}} {{#if customerRating}}
+          <p class="star-avg">{{customerRating}} Stars</p>
+          {{/if}}
+          <p class="reg-price strong no-sale">${{salePrice}}</p>
+        </div>
+        {{#if isSale}}
+        <a href="{{addToCartUrl}}" class="add-to-cart sale-button">Add to Cart</a> {{else}}
+        <a href="{{addToCartUrl}}" class="add-to-cart">Add to Cart</a> {{/if}}
       </div>
     </li>
   </script>
