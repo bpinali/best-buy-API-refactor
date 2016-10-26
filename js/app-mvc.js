@@ -17,7 +17,7 @@ walmart.Model.prototype.getWalmartResults = function(searchQuery) {
     url: 'http://api.walmartlabs.com/v1/search',
     data: {
       apiKey: 'd76akfju4ezu6f97h7crev9b',
-      numItems: 24,
+      numItems: 6,
       query: searchQuery
     },
     dataType: 'jsonp'
@@ -26,7 +26,7 @@ walmart.Model.prototype.getWalmartResults = function(searchQuery) {
 
 
 bestBuy.Model.prototype.getBestBuyResults = function(searchQuery) {
-  var url = 'https://api.bestbuy.com/v1/products((name=' + searchQuery + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
+  var url = 'https://api.bestbuy.com/v1/products((name=' + searchQuery + '*)&type!=BlackTie)?sort=salesRankLongTerm.asc';
   $.ajax({
     method: 'GET',
     url: url,
@@ -34,7 +34,7 @@ bestBuy.Model.prototype.getBestBuyResults = function(searchQuery) {
       format: 'json',
       apiKey: 't5reggzup769kevta2bdabkx',
       page: 1,
-      pageSize: 24
+      pageSize: 6
     },
     cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
     preowned: false,
